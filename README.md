@@ -1,3 +1,10 @@
+live site 
+https://ecopulso7.netlify.app
+
+
+
+
+
 # EcoPulse - Waste Management System Website
 
 A responsive, interactive website for a Waste Management System, built using HTML, CSS, and JavaScript with a 3D animated hero scene powered by Three.js.
@@ -68,3 +75,4 @@ Created for a Waste Management System web project.
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
+
