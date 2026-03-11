@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EcoPulse - Smart Waste Management System website with real-time impact insights and interactive tools." />
+  <title>EcoPulse | Waste Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+
+  <header class="topbar">
+    <a href="#home" class="brand">EcoPulse</a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#impact">Impact</a>
+      <a href="#calculator">Calculator</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="themeShift" aria-label="Shift color mode">Shift Look</button>
+  </header>
+
+  <main>
+    <section id="home" class="hero section">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Waste Management System</p>
+        <h1>Turn city waste into visible climate impact.</h1>
+        <p>
+          EcoPulse combines smart collection, segregation intelligence, and community tracking
+          to reduce landfill load and improve recycling recovery.
+        </p>
+        <div class="hero-cta">
+          <a href="#calculator" class="btn btn-primary">Estimate Your Impact</a>
+          <a href="#services" class="btn btn-ghost">Explore Modules</a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <canvas id="waste3d" aria-label="3D waste animation"></canvas>
+        <div class="floating-card">
+          <p>Realtime Sorting Accuracy</p>
+          <h3><span id="sortAccuracy">97</span>%</h3>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section services">
+      <div class="section-title reveal">
+        <p class="eyebrow">Core System</p>
+        <h2>Built for neighborhoods, campuses, and smart cities.</h2>
+      </div>
+      <div class="service-grid">
+        <article class="service-card reveal">
+          <h3>Smart Bin Monitoring</h3>
+          <p>IoT-style fill-level prediction with priority pickup routing.</p>
+        </article>
+        <article class="service-card reveal">
+          <h3>AI Segregation Guidance</h3>
+          <p>Classify dry, wet, e-waste and hazardous streams with user prompts.</p>
+        </article>
+        <article class="service-card reveal">
+          <h3>Route Optimization</h3>
+          <p>Fewer kilometers traveled, lower fuel burn, faster collection cycles.</p>
+        </article>
+        <article class="service-card reveal">
+          <h3>Citizen Dashboard</h3>
+          <p>Track waste diverted, CO2 saved and monthly participation scores.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="impact" class="section impact">
+      <div class="section-title reveal">
+        <p class="eyebrow">Live Impact</p>
+        <h2>Performance metrics updated as communities engage.</h2>
+      </div>
+      <div class="metric-grid">
+        <article class="metric reveal">
+          <p>Waste Diverted</p>
+          <h3><span class="counter" data-target="3820">0</span> tons</h3>
+        </article>
+        <article class="metric reveal">
+          <p>CO2 Emissions Reduced</p>
+          <h3><span class="counter" data-target="1146">0</span> tons</h3>
+        </article>
+        <article class="metric reveal">
+          <p>Active Households</p>
+          <h3><span class="counter" data-target="26800">0</span></h3>
+        </article>
+      </div>
+    </section>
+
+    <section id="calculator" class="section calculator">
+      <div class="section-title reveal">
+        <p class="eyebrow">Interactive Tool</p>
+        <h2>Household Waste Reduction Calculator</h2>
+      </div>
+
+      <div class="calc-shell reveal">
+        <div class="control">
+          <label for="household">Household Size: <strong id="householdVal">4</strong></label>
+          <input id="household" type="range" min="1" max="10" value="4" />
+        </div>
+
+        <div class="control">
+          <label for="recycle">Current Recycling Rate: <strong id="recycleVal">45</strong>%</label>
+          <input id="recycle" type="range" min="0" max="100" value="45" />
+        </div>
+
+        <div class="result">
+          <p>Estimated Monthly Landfill Reduction</p>
+          <h3><span id="reductionKg">0</span> kg</h3>
+          <div class="bar-wrap">
+            <div id="reductionBar"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="section-title reveal">
+        <p class="eyebrow">Connect</p>
+        <h2>Ready to launch your local waste management system?</h2>
+      </div>
+      <form class="contact-form reveal" id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="4" placeholder="Tell us about your project"></textarea>
+        <button type="submit" class="btn btn-primary">Send Request</button>
+        <p id="formMsg" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>EcoPulse Waste Management System | Built with HTML, CSS, JavaScript + Three.js</p>
+  </footer>
+
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
